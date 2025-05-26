@@ -42,15 +42,15 @@
 		<DropdownMenu.Group>
 			<DropdownMenu.Item>
 				<UserCircle class="size-4" />
-				My Profile
+				Profile
 			</DropdownMenu.Item>
 			<DropdownMenu.Item>
 				<MapPins class="size-4" />
-				My Addresses
+				Addresses
 			</DropdownMenu.Item>
 			<DropdownMenu.Item>
 				<TruckDelivery class="size-4" />
-				My Orders
+				Orders
 			</DropdownMenu.Item>
 		</DropdownMenu.Group>
 		<DropdownMenu.Separator />
