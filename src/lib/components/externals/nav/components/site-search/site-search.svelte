@@ -14,7 +14,7 @@
 	<AlertDialog.Trigger
 		class={buttonVariants({
 			variant: 'outline',
-			class: '"grid gap-2" grid-cols-[auto_1fr] items-center'
+			class: 'grid grid-cols-[auto_1fr] items-center gap-2'
 		})}
 	>
 		<Search class="text-muted-foreground size-5" />
