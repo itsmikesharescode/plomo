@@ -3,7 +3,7 @@
 	import ShoppingCartCheck from '@tabler/icons-svelte/icons/shopping-cart-check';
 </script>
 
-<Button href="/my-profile/my-cart" variant="outline">
+<Button href="/my-profile/cart" variant="outline">
 	<ShoppingCartCheck class="text-muted-foreground size-5" />
 	<span class="text-muted-foreground text-xs">My Cart</span>
 </Button>
