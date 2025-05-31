@@ -57,7 +57,9 @@
 					canScrollPrev ? 'bg-white transition-all hover:ring-2 active:scale-95' : 'bg-secondary'
 				]}
 			>
-				<ChevronLeft class="text-muted-foreground size-4" />
+				<ChevronLeft
+					class="size-4 {canScrollPrev ? 'text-muted-black' : 'text-muted-foreground'}"
+				/>
 			</button>
 			<button
 				disabled={!canScrollNext}
@@ -69,7 +71,9 @@
 					canScrollNext ? 'bg-white transition-all hover:ring-2 active:scale-95' : 'bg-secondary'
 				]}
 			>
-				<ChevronRight class="text-muted-black size-4" />
+				<ChevronRight
+					class="size-4 {canScrollNext ? 'text-muted-black' : 'text-muted-foreground'}"
+				/>
 			</button>
 		</div>
 	</div>
