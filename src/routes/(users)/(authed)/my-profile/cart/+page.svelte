@@ -1,6 +1,6 @@
 <script lang="ts" module>
 	import Pagination from './(components)/(pagination)/pagination.svelte';
-	import Items from './(components)/(items)/items.svelte';
+	import Item from './(components)/(item)/item.svelte';
 	import Header from './(components)/(header)/header.svelte';
 	import OrderSummary from './(components)/(order-summary)/order-summary.svelte';
 </script>
@@ -8,12 +8,12 @@
 <script lang="ts">
 </script>
 
-<main class="container mx-auto grid grid-cols-[2fr_1fr] gap-8 p-2">
-	<div class="">
+<main class="container mx-auto grid gap-8 p-2 lg:grid-cols-[2fr_1fr]">
+	<div class="flex flex-col gap-4">
 		<Header />
-		<div class="bg-white">
+		<div class="flex flex-col gap-4 bg-white">
 			{#each Array(20), index}
-				<Items onCheckedChange={() => console.log(index)} />
+				<Item onCheckedChange={() => console.log(index)} />
 			{/each}
 		</div>
 		<Pagination />

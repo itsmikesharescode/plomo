@@ -3,6 +3,7 @@
 	import { Button } from '$lib/components/internals/button/index';
 	import { Checkbox } from '$lib/components/internals/checkbox/index';
 	import TrashX from '@tabler/icons-svelte/icons/trash-x';
+	import ToolTipper from '$lib/components/externals/tooltipper/tooltipper.svelte';
 
 	interface Props {
 		onCheckedChange?: (checked: boolean) => void;
@@ -11,16 +12,21 @@
 	const { onCheckedChange }: Props = $props();
 </script>
 
-<div class="grid grid-cols-[auto_1fr] items-start gap-4 p-4">
-	<Checkbox {onCheckedChange} class="mt-2" />
+<div class="bg-accent grid grid-cols-[auto_1fr] items-start gap-4 rounded-lg p-4">
+	<ToolTipper description="Click to select this item.">
+		{#snippet content()}
+			<Checkbox {onCheckedChange} class="bg-white" />
+		{/snippet}
+	</ToolTipper>
+
 	<div class="flex flex-col">
 		<span class="text-muted-foreground text-2xl font-semibold">Acne Shirt</span>
 		<span class="text-muted-foreground text-sm">Sample Category</span>
 
-		<div class="grid grid-cols-[auto_1fr] items-center gap-4">
-			<div class="bg-secondary mt-4 size-[200px] rounded-lg"></div>
+		<div class="grid items-center gap-4 md:grid-cols-[210px_1fr]">
+			<div class="bg-secondary mt-4 h-[200px] w-full rounded-lg"></div>
 
-			<div class="grid h-full p-4">
+			<div class="grid h-full gap-4 p-4">
 				<div class="flex flex-col gap-4">
 					<span class="line-clamp-3">
 						Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit sequi, deserunt cum
@@ -46,17 +52,30 @@
 					<Badge>Size: 200ml</Badge>
 				</div>
 
-				<div class="flex items-end justify-between">
+				<div class="flex flex-col justify-between gap-4 md:flex-row md:items-end">
 					<span>₱ 123,000</span>
 
 					<div class="flex items-center gap-2">
-						<Button variant="destructive" size="icon" class="rounded-full">
-							<TrashX />
-						</Button>
+						<ToolTipper description="Remove this item from your cart.">
+							{#snippet content()}
+								<Button variant="destructive" size="icon" class="rounded-full">
+									<TrashX />
+								</Button>
+							{/snippet}
+						</ToolTipper>
+
 						<div class="grid grid-cols-[1fr_auto_1fr] items-center gap-2">
-							<Button size="icon" class="rounded-full">-</Button>
+							<ToolTipper description="Decrease the quantity of this item.">
+								{#snippet content()}
+									<Button size="icon" class="rounded-full">-</Button>
+								{/snippet}
+							</ToolTipper>
 							2
-							<Button size="icon" class="rounded-full">+</Button>
+							<ToolTipper description="Increase the quantity of this item.">
+								{#snippet content()}
+									<Button size="icon" class="rounded-full">+</Button>
+								{/snippet}
+							</ToolTipper>
 						</div>
 					</div>
 				</div>
