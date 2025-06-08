@@ -12,23 +12,25 @@
 	const { onCheckedChange }: Props = $props();
 </script>
 
-<div class="bg-accent grid grid-cols-[auto_1fr] items-start gap-4 rounded-lg p-4">
+<div class="bg-accent grid grid-cols-[auto_1fr] items-start gap-4 p-4 md:p-4">
 	<ToolTipper description="Click to select this item.">
 		{#snippet content()}
 			<Checkbox {onCheckedChange} class="bg-white" />
 		{/snippet}
 	</ToolTipper>
 
-	<div class="flex flex-col">
-		<span class="text-muted-foreground text-2xl font-semibold">Acne Shirt</span>
-		<span class="text-muted-foreground text-sm">Sample Category</span>
+	<div class="flex flex-col gap-2">
+		<div class="flex flex-col">
+			<span class="text-muted-foreground text-2xl font-semibold">Acne Shirt</span>
+			<span class="text-muted-foreground text-sm">Sample Category</span>
+		</div>
 
 		<div class="grid items-center gap-4 md:grid-cols-[210px_1fr]">
-			<div class="bg-secondary mt-4 h-[200px] w-full rounded-lg"></div>
+			<div class="bg-secondary h-[200px] w-full rounded-lg"></div>
 
-			<div class="grid h-full gap-4 p-4">
+			<div class="grid h-full gap-4">
 				<div class="flex flex-col gap-4">
-					<span class="line-clamp-3">
+					<span class="line-clamp-6 text-sm">
 						Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit sequi, deserunt cum
 						accusantium earum omnis itaque corrupti voluptatum nobis, voluptatem facere rem quasi.
 						Ullam nulla quaerat assumenda molestiae, pariatur debitis repellat placeat officia
