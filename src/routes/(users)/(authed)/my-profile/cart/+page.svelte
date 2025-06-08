@@ -8,7 +8,7 @@
 <script lang="ts">
 </script>
 
-<main class="container mx-auto grid gap-8 p-2 lg:grid-cols-[2fr_1fr]">
+<main class="container mx-auto grid gap-8 p-2 md:grid-cols-[2fr_1fr]">
 	<div class="flex flex-col gap-4">
 		<Header />
 		<div class="flex flex-col gap-4 bg-white">
