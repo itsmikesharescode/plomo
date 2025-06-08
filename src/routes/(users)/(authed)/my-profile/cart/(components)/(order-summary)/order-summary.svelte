@@ -7,7 +7,7 @@
 	import { Input } from '$lib/components/internals/input/index.js';
 </script>
 
-<div class="border-muted-foreground h-fit rounded-lg border bg-white">
+<div class="border-muted-foreground hidden h-fit rounded-lg border bg-white md:block">
 	<div class="border-muted-foreground flex flex-col gap-1 border-b">
 		<span class="px-4 pt-4 text-sm font-medium"> Order Summary </span>
 
