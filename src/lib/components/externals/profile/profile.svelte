@@ -40,19 +40,18 @@
 		</DropdownMenu.Label>
 		<DropdownMenu.Separator />
 		<DropdownMenu.Group>
-			<DropdownMenu.Item>
-				<UserCircle class="size-4" />
-				Profile
-			</DropdownMenu.Item>
-			<DropdownMenu.Item>
-				<MapPins class="size-4" />
-				Addresses
-			</DropdownMenu.Item>
+			<a href="/addresses">
+				<DropdownMenu.Item>
+					<MapPins class="size-4" />
+					Addresses
+				</DropdownMenu.Item>
+			</a>
 			<DropdownMenu.Item>
 				<TruckDelivery class="size-4" />
 				Orders
 			</DropdownMenu.Item>
 		</DropdownMenu.Group>
+
 		<DropdownMenu.Separator />
 		<DropdownMenu.Item>
 			<LogoutIcon />

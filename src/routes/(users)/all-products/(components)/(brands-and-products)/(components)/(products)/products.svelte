@@ -3,6 +3,7 @@
 	import type { CarouselAPI } from '$lib/components/internals/carousel/context';
 	import ChevronLeft from '@tabler/icons-svelte/icons/chevron-left';
 	import ChevronRight from '@tabler/icons-svelte/icons/chevron-right';
+	import ProductCard from '$lib/components/externals/product-card/product-card.svelte';
 
 	let api = $state<CarouselAPI>();
 
@@ -27,18 +28,13 @@
 </script>
 
 <div class="relative container mx-auto flex flex-col gap-4 px-2 py-10">
-	<span class="text-5xl font-bold">Brands</span>
+	<span class="text-5xl font-bold">Brand Name</span>
 	<Carousel.Root setApi={(emblaApi) => (api = emblaApi)} class="w-full">
 		<Carousel.Content class="p-2">
 			{#each Array(10)}
 				<Carousel.Item class="grid gap-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
 					{#each Array(5)}
-						<a
-							href="/all-products/brand-name"
-							aria-label="photo"
-							class="bg-secondary h-[300px] w-full rounded-lg transition-all duration-300 hover:scale-105 active:scale-95"
-						>
-						</a>
+						<ProductCard />
 					{/each}
 				</Carousel.Item>
 			{/each}
@@ -61,7 +57,9 @@
 					canScrollPrev ? 'bg-white transition-all hover:ring-2 active:scale-95' : 'bg-secondary'
 				]}
 			>
-				<ChevronLeft class="text-muted-foreground size-4" />
+				<ChevronLeft
+					class="size-4 {canScrollPrev ? 'text-muted-black' : 'text-muted-foreground'}"
+				/>
 			</button>
 			<button
 				disabled={!canScrollNext}
@@ -73,7 +71,9 @@
 					canScrollNext ? 'bg-white transition-all hover:ring-2 active:scale-95' : 'bg-secondary'
 				]}
 			>
-				<ChevronRight class="text-muted-black size-4" />
+				<ChevronRight
+					class="size-4 {canScrollNext ? 'text-muted-black' : 'text-muted-foreground'}"
+				/>
 			</button>
 		</div>
 	</div>
